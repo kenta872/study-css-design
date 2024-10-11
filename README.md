@@ -1,0 +1,97 @@
+# 概要
+CSS設計の種類と特徴
+
+# CSS設計種類
+- Scoped CSS
+    - Vue,Reactなどではhtmlコードとcssを同じファイルに記述することができるため、命名規則で細かく管理する必要がなくなった
+    - 適当な名前を付けてよいということではない
+- BEM
+    - block, element, modifierで構成
+    - 記法
+        - block__element--modifier
+    - block
+        - コンテナ全体
+    - element
+        - コンテナの要素
+    - modifier
+        - active,hoverなどの状態を示す
+
+- OOCSS(Object Oriented CSS)
+    - 構造と見た目でCSSを分ける
+        - 使いまわしやすくなる
+    - ディレクトリ構成
+        - styles/
+            - base/
+                - _reset.scss # リセット用スタイル
+                - _typography.scss # 文字列関連のスタイル
+            - layout/
+                - _grid.scss # グリッドシステム
+                - _header.scss # ヘッダー
+                - _footer.scss # フッター
+            - objects/
+                - _button.scss
+                - _form.scss
+                - _media.scss
+            - components/
+                - _navbar.scss
+                - _slider.scss
+                - _tabs.scss
+            - utilities/
+                - _spacing.scss # スペース関連
+                - _helper.scss # ヘルパークラス
+                - _animation.scss # アニメーション関連
+- SMACSS
+    - OOCSSより厳密にファイルを管理する
+    - ディレクトリ構成
+        - styles/
+            - base/
+                - _reset.scss
+                - _typography.scss
+            - layout/
+                - _grid.scss
+                - _header.scss
+                - _footer.scss
+            - modules/
+                - _buttono.scss
+                - _form.scss
+                - _media.scss
+            - state/
+                - _hover.scss
+                - _active.scss
+            - theme/
+                - _dart.scss
+                - _light.scss
+- FLOCSS
+    - OOCSS, SMACSS の考えと BEM記法を取り入れている
+    - 接頭語に特定の文字を入れる
+        - Layout: .l-hoge
+        - Component: .c-hoge
+        - Project: .p-hoge
+        - Utility: .u-hoge
+    - ディレクトリ構造
+        - style.scss
+        - foundation/
+            - _base.scss # リセットCSSなど
+            - _system.scss # javascript関連
+            - _variables.scss # 変数
+            - _mixin.scss
+            - _index.scss # foundationディレクトリのインデックスファイル
+        - layout/
+            - _footer.scss
+            -nlknoigiutigiun97gnklnlknl l.k/llkkllklkklklkl nnnnn _header.scss
+            - _main.scss
+            - _sidebar.scss
+        - object/
+            - component/
+                - _navbar.scss
+                - _slider.scss
+                - _tabs.scss
+            - project/ # プロジェクトスタイル
+                - _articles.scss
+                - _contact.scss
+                - _gallery.scss
+                - _profile.scss
+            - utility/
+                - _spacing.scss
+                - _helpers.scss
+                - _animation.scss
